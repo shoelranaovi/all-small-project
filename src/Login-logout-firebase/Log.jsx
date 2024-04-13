@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword } from "firebase/auth"
+import { signInWithEmailAndPassword,onAuthStateChanged } from "firebase/auth"
 import { useState } from "react"
 import auth from "../firebase"
 
@@ -7,6 +7,7 @@ function Log() {
 
     const[email,setEamil]=useState("")
     const[password,setPassword]=useState("")
+    const[islogin,setIsLogin]=useState("logOUt")
    
    
 
@@ -17,6 +18,8 @@ function Log() {
        // Signed in 
        const user = userCredential.user;
        console.log(user);
+       setEamil("")
+       setPassword("")
        // ...
      })
      .catch((error) => {
@@ -25,7 +28,17 @@ function Log() {
        console.log(errorCode,errorMessage);
      })
 
+     onAuthStateChanged(auth, (user) => {
+        if (user) {
+          const uid = user.uid;
+          setIsLogin("LOg IN")
+          console.log(uid);
 
+          // ...
+        } else {
+            setIsLogin("LOg out")
+        }
+      })
 
 
     }
@@ -39,6 +52,7 @@ function Log() {
             <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="type your password here " />
            
            <button onClick={signup}>Login Here</button>
+           <p>{islogin} </p>
         </form>
     </div>
   )
