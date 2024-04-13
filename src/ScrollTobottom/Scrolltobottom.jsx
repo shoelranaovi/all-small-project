@@ -2,6 +2,7 @@ import { useRef } from "react";
 import useCusomFatch from "../custom-Hook/CusomFatch";
 
 function Scrolltobottom() {
+  // eslint-disable-next-line no-unused-vars
   const { data, error } = useCusomFatch(
     "https://dummyjson.com/products?item=200"
   );
