@@ -1,0 +1,24 @@
+:root{
+    --bg-color:white;
+    --button:rgb(218, 92, 130);
+    --text-color:black;
+}
+
+[data-theme="dark"]{
+    --bg-color:black;
+    --button:rgb(111, 52, 189);
+    --text-color:white;
+}
+.container{
+    height: 70vh;
+    width: 100vw;
+    background-color: var(--bg-color);
+}
+h1{
+    color: var(--text-color);
+}
+.button{
+    background-color: var(--button);
+    color: var(--text-color);
+    
+}

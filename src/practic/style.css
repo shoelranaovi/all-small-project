@@ -1,0 +1,21 @@
+.ul {
+  list-style: none;
+  gap: 10px;
+}
+li {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid black;
+}
+li.correct {
+  background-color: green;
+}
+li.wrong {
+  background-color: red;
+}
+.btn {
+  background-color: aqua;
+  margin-top: 10px;
+  margin-left: 50px;
+  padding: 10px;
+}

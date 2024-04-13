@@ -1,0 +1,17 @@
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+ul li {
+  padding: 10px;
+  border: 1px solid black;
+}
+li.correct {
+  background-color: rgba(127, 255, 212, 0.461);
+  border: 1px solid green;
+}
+li.false {
+  background-color: rgba(226, 43, 113, 0.571);
+  border: 1px solid red;
+}
